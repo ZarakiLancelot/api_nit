@@ -1,9 +1,9 @@
 <?php
-require_once('vendor/autoload.php');
+// require_once('vendor/autoload.php');
 
-// Cargar variables de entorno
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+// // Cargar variables de entorno
+// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
 
 function callAPINit($url, $data){
   $curl = curl_init($url);
@@ -31,8 +31,10 @@ $nit = "1368036";
 
 // Datos a enviar en la petición
 $data = array(
-	"emisor_codigo" => $_ENV['EMISOR_CODIGO'],
-	"emisor_clave" => $_ENV['EMISOR_CLAVE'],
+	// "emisor_codigo" => $_ENV['EMISOR_CODIGO'],
+  "emisor_codigo" => "89552407",
+	// "emisor_clave" => $_ENV['EMISOR_CLAVE'],
+  "emisor_clave" => "163042F4FDFD6225919DF73C4BDC61C7",
 	"nit_consulta" => $nit
 );
 $json_data = json_encode($data);
